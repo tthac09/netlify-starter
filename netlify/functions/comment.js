@@ -9,6 +9,7 @@ const app = Waline({
   const { userInfo } = this.ctx.state;
   comment.status = think.isEmpty(userInfo) ? 'waiting' : 'approved';
   },
+  mailSubjectAdmin: "tthac09's blog 有新评论啦",
 });
 
 module.exports.handler = serverless(http.createServer(app));
