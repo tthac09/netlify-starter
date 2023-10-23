@@ -11,3 +11,7 @@ const app = Waline({
 });
 
 module.exports.handler = serverless(http.createServer(app));
+
+module.exports = Waline({
+  mailSubjectAdmin: "有新评论啦",
+});
