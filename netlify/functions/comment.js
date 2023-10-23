@@ -5,8 +5,9 @@ const Waline = require('@waline/vercel');
 const serverless = require('serverless-http');
 
 const app = Waline({
-  async postSave(comment) {
-    // do what ever you want after save comment
+  async preSave(comment) {
+  const { userInfo } = this.ctx.state;
+  comment.status = think.isEmpty(userInfo) ? 'waiting' : 'approved';
   },
 });
 
